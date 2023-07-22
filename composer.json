@@ -1,0 +1,42 @@
+{
+    "name": "plan-a23/paymob",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Plan A",
+            "email": "contact@plan-a.eu.org",
+            "homepage": "https://plan-a.eu.org"
+        }
+    ],
+    "homepage": "https://github.com/plan-a23/paymob",
+    "keywords": ["Laravel", "Paymob"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7",
+        "orchestra/canvas": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "PlanA23\\Paymob\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PlanA23\\Paymob\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PlanA23\\Paymob\\PaymobServiceProvider"
+            ],
+            "aliases": {
+                "Paymob": "PlanA23\\Paymob\\Facades\\Paymob"
+            }
+        }
+    }
+}
