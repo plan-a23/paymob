@@ -2,8 +2,6 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
@@ -86,48 +84,46 @@ PAYMOB_WALLETS_INTEGRATION:xxxxxxx
 ```php
 use PlanA23\Paymob\Classes\WalletPay;
 $pay = new WalletPay();
-        $pay->setItems([
-            [
-                "name"=>"ASC1515",
-                "amount_cents"=> "500000",
-                "description"=>"Smart Watch",
-                "quantity"=> "1"
-            ],
-            [
-                "name"=> "ERT6565",
-                "amount_cents"=> "200000",
-                "description"=> "Power Bank",
-                "quantity"=> "1"
-            ]
-        ]);
-        $pay->setAmountCents(700000);
-        $pay->setPayOrderId(2); // don't duplicate this id
-       // can enter shipping data only or shipping and billing
-        $pay->setShippingData(
-            first_name: 'test',
-            last_name:'test',
-            email: 'test@domain.com',
-            phone_number:'+201xxxxxxxx',
-            country:'EG',
-            state:'giza',
-            city: '6 october',
-            street: '123 elhosry' ,
-            postal_code: 34546
-        );
-        $pay->setBillingData(
-            first_name: 'test',
-            last_name:'test',
-            email: 'test@domain.com',
-            phone_number:'+201xxxxxxxx',
-            country:'EG',
-            state:'giza',
-            city: '6 october',
-            street: '123 elhosry' ,
-            postal_code: 34546);
-        $pay->setPhoneNumber('+201xxxxxxxxx'); // for wallet
-        return $pay->payment(); //this is link for payment
-
-
+$pay->setItems([
+    [
+        "name"=>"ASC1515",
+        "amount_cents"=> "500000",
+        "description"=>"Smart Watch",
+        "quantity"=> "1"
+    ],
+    [
+        "name"=> "ERT6565",
+        "amount_cents"=> "200000",
+        "description"=> "Power Bank",
+        "quantity"=> "1"
+    ]
+]);
+$pay->setAmountCents(700000);
+$pay->setPayOrderId(2); // don't duplicate this id
+// can enter shipping data only or shipping and billing
+$pay->setShippingData(
+    first_name: 'test',
+    last_name:'test',
+    email: 'test@domain.com',
+    phone_number:'+201xxxxxxxx',
+    country:'EG',
+    state:'giza',
+    city: '6 october',
+    street: '123 elhosry' ,
+    postal_code: 34546
+);
+$pay->setBillingData(
+    first_name: 'test',
+    last_name:'test',
+    email: 'test@domain.com',
+    phone_number:'+201xxxxxxxx',
+    country:'EG',
+    state:'giza',
+    city: '6 october',
+    street: '123 elhosry' ,
+    postal_code: 34546);
+$pay->setPhoneNumber('+201xxxxxxxxx'); // for wallet
+return $pay->payment(); //this is link for payment
 
 ```
 ## Change log
