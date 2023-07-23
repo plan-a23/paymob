@@ -16,7 +16,7 @@ class WalletPay extends PreparePay
 
     public function payment()
     {
-        $this->order_registration();
+        $order =$this->order_registration();
         $this->payment_key();
 
         $curl = curl_init();
@@ -43,6 +43,8 @@ class WalletPay extends PreparePay
 
         $response = curl_exec($curl);
         curl_close($curl);
-        return $response['redirect_url'];
+        return [
+            'id'=>$order->id,
+            'payment_link'=>$response['redirect_url']];
     }
 }

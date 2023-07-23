@@ -12,7 +12,7 @@
     "homepage": "https://github.com/plan-a23/paymob",
     "keywords": ["Laravel", "Paymob"],
     "require": {
-        "illuminate/support": "~9"
+
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",

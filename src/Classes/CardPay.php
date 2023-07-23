@@ -16,8 +16,10 @@ class CardPay extends PreparePay
 
     public function payment()
     {
-        $this->order_registration();
+        $order = $this->order_registration();
         $this->payment_key();
-        return 'https://accept.paymobsolutions.com/api/acceptance/iframes/'.$this->iframe_id.'?payment_token='.$this->payment_token;
+        return [
+            'id'=>$order->id,
+            'payment_link'=>'https://accept.paymobsolutions.com/api/acceptance/iframes/'.$this->iframe_id.'?payment_token='.$this->payment_token];
     }
 }
