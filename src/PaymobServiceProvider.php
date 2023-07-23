@@ -31,7 +31,7 @@ class PaymobServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/plana-paymob.php', 'paymob');
+        $this->mergeConfigFrom('../config/plana-paymob.php', 'paymob');
 
         // Register the service the package provides.
         $this->app->singleton('paymob', function ($app) {
